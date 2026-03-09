@@ -1,0 +1,68 @@
+1. Want to create an Chat Application --> If we dont' have socket.io then how to create it.
+
+
+
+User A      --------------------->   Server     ---------------------------->     User B
+
+User A and User B talk to each other by http protocol , where server is used to  maintain the history of users.
+
+                                    A --> Hello  b
+                                    B ---> Hello a 
+                                    B ---> Mid sem kab sa hai 
+                                    (here  all chat of users stored in the server) 
+                                    Here A and B rqst to the server to check
+                                    that any msg comes from the any user , vice-versa also.
+
+    B continuously poll on the server, any new msg comes then send res to A.
+
+--> By this method more load on the server may be server crash.
+
+This problem is solved by socket.io 
+
+Socket.io --> User create a connection to server and don't close that connection(Permanent connection) , 
+if i talk about http protocol user rqst , serve and disconnect the connection.
+
+But in Socket.io no connection break;
+here any msg related to b then sever sent it.
+
+Same connection use for forwarding , receiving the msg.
+
+Some Rules to follow while work with socket.io .
+
+
+// Before we use app.listen --> Start the server --> actual behind is http.
+
+// socket.io is not well work with express then we have to go to http because Express is build on the top of http.
+
+--> socket.io or express use together then write boiler plate code of it.
+
+Postman and EchoApi as client connect to server via socket.io(.io means server bachit).
+
+socket(single user), --> event-driven --> communicate event based where (on) means listen the event and 
+emit ---> fire the event
+
+io.on --> when new connection establish on server then callback function call.
+
+When server restart then connection break.
+
+IF something happen on server it will effect the whole user which is connected to sever.
+
+// Task --> 
+
+1. socket.emit()
+2.socket.broadcast.emit()
+3. io.emit() 
+
+
+
+
+
+
+
+
+
+
+
+
+
+event, adapter, server(middleware), client
