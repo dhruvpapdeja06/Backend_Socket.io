@@ -1,0 +1,22 @@
+
+
+1.Basic Authentication System.
+2. Chat with Ai 
+3. Chat history
+4. Msg Storage
+5. Ai with Internet research Feature
+
+Data Modeling --> How data will be stored in db , basically design .
+
+User                                                                 Chat                           message
+
+_id                                                                 _id                             _id 
+username                                                            user                             chat
+email                                                                 title                          content
+password                                                               createdAt                      role : [user,ai]
+verified /not (Not acess the application) by defalut false              updatedAt
+createdAt
+updatedAt
+
+
+AI feature is costly for that you have to verified , Ai cluster is costly.
