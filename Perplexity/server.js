@@ -1,6 +1,13 @@
 
 import app from "./src/app.js";
+import connectTODB from "./src/config/database.js";
 
+
+connectTODB()
+    .catch((err)=>{
+        console.error("MongoDB connection failed:",err);
+        process.exit(1);
+    });
 
 
 
